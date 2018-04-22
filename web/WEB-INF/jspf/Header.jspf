@@ -53,8 +53,8 @@
 
                      <c:if test ="${sessionScope.USER==null}" var="USER" >
                                 <a href="index.jsp">Home</a>
-                                <a href="Register">Register</a>
-                                <a href="Login">Login</a>
+                                <a href="Register.jsp">Register</a>
+                                <a href="Login.jsp">Login</a>
                                 <a href="#aa">aa</a>
                      </c:if>
                         

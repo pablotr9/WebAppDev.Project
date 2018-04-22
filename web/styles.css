@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-abr-2018, 20:29:20
+    Author     : Pablo
+*/
+
+        * {
+                        margin: 0;
+                        padding: 0;
+
+        }
+
+        .myform{
+            padding-top: 60px;
+            padding-left: 80px;
+        }
+        
+        .myform form{
+            padding-top: 20px;
+        }
+        
+        .myform h1{
+            font-size: 36px;
+        }
+        
+        .myform .form-element{
+            font-size: 20px;
+            font-weight: 800;
+            padding-bottom: 10px;
+        }
+        
+        .myform input{
+            height: 28px;
+            font-weight: 300;
+        }
+            
