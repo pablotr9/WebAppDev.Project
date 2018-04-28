@@ -3,62 +3,56 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-    <head> 
-	<link rel="stylesheet" href="styles.css" />
+    <head>
+        
         <title>WebAppDev.Project</title> 
         <meta charset=UTF-8> 
-        <meta name=viewport content=width=device-width> 
-    </head> 
+        <meta name="viewport" content="width=device-width"> 
+    </head>
     <body> 
         
-<style type="text/css">
-     * {
-		margin: 0;
-		padding: 0;
-    }       
-    .topnav {
-        background-color: #3c30f2;
-        overflow: hidden;
-    }
-
-    .topnav a {
-        float: left;
-        color: #ffffff;
-        text-align: center;
-        padding: 15px 18px;
-        text-decoration: none;
-        font-size: 17px;
-    }
-
-    .topnav a:hover {
-        background-color: #5d56c9;
-        color: white;
-    }
-
    
-
-</style>  
 
         
         <header>
-		<div class="topnav">
                          <c:if test ="${sessionScope.USER!=null}" var="USER" >
-                                <a href="index.jsp">Home</a>
-                                <a href="LogoutController">Logout</a>
-                                <a href="#aa">aa</a>
-                                <a href="#bb">bb</a>
+                             
                         </c:if>
 
 
 
                      <c:if test ="${sessionScope.USER==null}" var="USER" >
-                                <a href="index.jsp">Home</a>
-                                <a href="Register.jsp">Register</a>
-                                <a href="Login.jsp">Login</a>
-                                <a href="#aa">aa</a>
+                                <div class="ct" id="t1">
+                                    <div class="ct" id="t2">
+                                      <div class="ct" id="t3">
+                                        <div class="ct" id="t4">
+                                   <section>  
+                                    <ul>
+                                      <a href="#t1"><li class="icon fa fa-home" id="uno"></li></a>
+                                      <a href="#t2"><li class="icon fa fa-keyboard-o" id="dos"></li></a>
+                                      <a href="#t3"><li class="icon fa fa-coffee" id="tres"></li></a>
+                                      <a href="#t4"><li class="icon fa fa-dribbble" id="cuatro"></li></a>
+                                    </ul>
+                                     <div class="page" id="p1">
+                                        <li class="icon fa fa-home"><span class="title">Home</span><span class="hint">Like this pen to see the magic!...<br/> Just kidding, it won't happen anything but I'll be really happy If you do so.</span></li>   
+                                     </div>
+                                     <div class="page" id="p2">
+                                       <li class="icon fa fa-keyboard-o"><span class="title">Type</span></li>
+                                     </div>  
+                                     <div class="page" id="p3">
+                                       <li class="icon fa fa-coffee"><span class="title">Coffee</span></li>
+                                     </div>
+                                     <div class="page" id="p4">
+                                      <li class="icon fa fa-dribbble"><span class="title">Dribbble</span><span class="hint"><a href="https://dribbble.com/rupok" target="_blank">Follow me on Dribbble</span></li>
+                                     </div>  
+                                           <p class="credit"> Original Pen by <a href="https://codepen.io/hrtzt/">Alberto Hartzet</a></p>
+                                   </section>
+
+                                        </div>
+                                        </div>
+                                      </div>
+                                     </div>
                      </c:if>
                         
-                    </ul
-		</div>
 	</header>
         

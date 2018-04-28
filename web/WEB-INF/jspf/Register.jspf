@@ -1,0 +1,39 @@
+<li class="icon">
+    <span class="title" id="reg2">Register</span>
+        <span class="formulario"> 
+            <form id="reg" method=post action=RegitrationController >     
+               <div class="salto"> </div>              
+                 <div class=form-element> 
+                     <label for=username>Username</label> <br>
+                     <input  type=text name=uname  id=uname required> 
+                 </div> 
+                 <div class=form-element> 
+                     <label for=password>Password</label> <br>
+                     <input type=password name=password  id=password required> 
+                 </div>
+                 <div class=form-element> 
+                     <label for=rpassword>Repeat the Password</label> <br>
+                     <input type=password name=rpassword id=rpassword required> 
+                 </div>
+                 <div class=form-element> 
+                     <label for=email>Email</label> <br>
+                     <input type=email name=email id=email required> 
+                 </div>
+                  <div class=form-element>   
+                     <label for=gender> Choose a gender: </label>
+                     <strong>Female</strong><div class="left"></div>
+                     <input type="radio" name="gender" value="female"  />
+                     <strong>Male</strong>
+                     <input type="radio" name="gender" value="male" checked />      
+                 </div>
+                 <div class="form-element">   
+                     <label for="telephone"> Telephone </label><br>
+                     <input type="tel" id="telephone" name="telephone" required />                    
+                 </div>
+                 <div class=form-element> 
+                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="reset" class="btn btn-primary">Reset</button>
+                 </div>   
+         </form>
+    </span>
+</li>
