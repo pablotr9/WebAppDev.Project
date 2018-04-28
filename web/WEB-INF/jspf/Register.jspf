@@ -38,3 +38,12 @@
          </form>
     </span>
 </li>
+<c:if test ="${not empty requestScope.errors}" var="errors" >
+    <ul>
+        <c:forEach items="${requestScope.errors}" var="errors"
+            varStatus="err"
+            begin="0" step="1">
+            <li>${errors}</li></br>
+        </c:forEach>       
+    </ul>                
+</c:if>
