@@ -16,7 +16,16 @@
                 <button type="reset" class="btn btn-primary">Reset</button>
             </div>
         </form>
-
-
     </span>
 </li>
+
+<div class="prueba" id="error"> 
+    <ul>
+        <c:forEach items="${requestScope.errors}" var="errors"
+            varStatus="err"
+            begin="0" step="1">
+            <li>${errors}</li></br>
+        </c:forEach>   
+    </ul>
+</div>   
+    

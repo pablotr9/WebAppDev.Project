@@ -32,11 +32,19 @@
                
              <div class="page" id="p2">
                      <%@include file="/WEB-INF/jspf/Login.jspf" %>
+                <div class="prueba" id="error"> 
+                     <ul> <li>The username cannot be empty!!</li> <br>
+                         <li>segundo sadsa das error</li> <br>
+                         <li>asdjej error asodbasi dbais </li> <br>
+                         <li>cuarto error</li> 
+                     </ul>
                  
+                </div>
              </div> 
                  
              <div class="page" id="p3">
                    <%@include file="/WEB-INF/jspf/Register.jspf" %>
+                   
              </div>
              
              <div class="page" id="p4">
