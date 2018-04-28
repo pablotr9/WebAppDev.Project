@@ -5,10 +5,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+    
+import dao.UserDAO;
+    
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,24 +22,29 @@ import javax.servlet.http.HttpServletResponse;
  * @author Pablo
  */
 public class LoginController extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+UserDAO userDAO=UserDAO.getInstance();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
+            //Array with errors
+            ArrayList<String> errors = new ArrayList();
+            
             String username = request.getParameter("uname");
             String password = request.getParameter("password");
-            ArrayList<String> errors = new ArrayList();
+            
+            if(userDAO.isPasswordCorrect(username, password)){
+                request.getSession().setAttribute("user", username);
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                rd.forward(request, response);
+            } else {
+                // does not exist
+                errors.add("User does not exist or password is incorrect");
+                request.setAttribute("LOGIN_ERROR", errors);
+                RequestDispatcher rd = request.getRequestDispatcher("/LoginView");
+                rd.forward(request, response);
+            }
+            
+           
             
             //check in db if username+password exists
             if( false ){

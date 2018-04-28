@@ -31,8 +31,9 @@ public class RegistrationController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            ArrayList<String> errors = new ArrayList();
             RequestDispatcher rd;
-            String error ="";
+          
             boolean hasErrors=false;
             String username = request.getParameter("uname");
             String name = request.getParameter("name");
@@ -52,10 +53,26 @@ public class RegistrationController extends HttpServlet {
            
             if(userDAO.userExists(username)){
                 hasErrors=true;
-                error="Username already exists";
+                errors.add("Username already exists");
+            }
+            if(password!=rpassword){
+                hasErrors=true;
+                errors.add("The passwords aren't the same");
+            }
+            if(password.length()<6 ){
+                hasErrors=true;
+                errors.add("The password is too short");
+            }
+            if(username.length()<6 ){
+                hasErrors=true;
+                errors.add("The username is too short");
+            }
+             if(address.length()<6 ){
+                hasErrors=true;
+                errors.add("The address is too short");
             }
             if(hasErrors){
-                request.setAttribute("ERRORS", error);
+                request.setAttribute("ERRORS", errors);
                 rd = request.getRequestDispatcher("web.jsp");
                 rd.forward(request, response);
             }
@@ -65,7 +82,5 @@ public class RegistrationController extends HttpServlet {
             rd = request.getRequestDispatcher("web.jsp");
             rd.forward(request, response);
             }
-       
-     
     }
 }
