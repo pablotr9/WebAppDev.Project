@@ -156,8 +156,24 @@ a {
     color: black;
 }
 
+.formulario form#reg .form-element{
+    padding-top: 9px;
+}
+
+
+.formulario form#reg label{
+    
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
 .formulario form#reg input{
     border-color: rgb(112, 161, 239,0.5);
+    height: 22;
+    padding:0;
+    margin:0;
+    
     
 }
 .title#reg2{

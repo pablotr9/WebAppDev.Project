@@ -1,4 +1,4 @@
-package controllers;
+    package controllers;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -47,10 +47,10 @@ public class LoginController extends HttpServlet {
             
             if(errors.isEmpty()){
                 request.getSession().setAttribute("USER",username);                    
-                request.getRequestDispatcher("*******").forward(request, response); // fix
+                request.getRequestDispatcher("web.jsp").forward(request, response); // fix
             }else{
                 request.setAttribute("errors", errors);
-                request.getRequestDispatcher("Login.jsp").forward(request, response);  //fix
+                request.getRequestDispatcher("web.jsp").forward(request, response);  //fix
             }
     }
 
