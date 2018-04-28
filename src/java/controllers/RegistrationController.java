@@ -41,7 +41,7 @@ public class RegistrationController extends HttpServlet {
             String rpassword = request.getParameter("rpassword");
             String email=request.getParameter("email");
             String address=request.getParameter("address");
-            
+           //Ewrsdf ejej
             if(userDAO.userExists(username)){
                 hasErrors=true;
                 error="Username already exists";
