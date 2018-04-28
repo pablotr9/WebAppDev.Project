@@ -1,7 +1,7 @@
 <li class="icon" id="regi">
     <span class="title" id="reg2">Register</span>
         <span class="formulario"> 
-            <form id="reg" method=post action=RegitrationController >     
+            <form id="reg" method=post action=RegistrationController >     
                <div class="salto"> </div>              
                  <div class=form-element> 
                      <label for=username>Username</label> <br>

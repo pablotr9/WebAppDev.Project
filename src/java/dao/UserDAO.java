@@ -35,6 +35,7 @@ public class UserDAO {
             PreparedStatement prepStmt = 
                     connection.prepareStatement("SELECT * from users u where u.username = ?");
             prepStmt.setString(1, username);
+            
             ResultSet rs = prepStmt.executeQuery();
             //result set is empty if there are no users with the same username
             if (rs.next()) {

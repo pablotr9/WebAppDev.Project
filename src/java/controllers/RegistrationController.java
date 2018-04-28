@@ -42,18 +42,27 @@ public class RegistrationController extends HttpServlet {
             String email=request.getParameter("email");
             String address=request.getParameter("address");
            //Ewrsdf ejej
+           System.out.println(username);
+           System.out.println(name);
+           System.out.println(surname);
+           System.out.println(password);
+           System.out.println(rpassword);
+           System.out.println(email);
+           System.out.println(address);
+           
             if(userDAO.userExists(username)){
                 hasErrors=true;
                 error="Username already exists";
             }
             if(hasErrors){
                 request.setAttribute("ERRORS", error);
-                rd = request.getRequestDispatcher("/RegistrationView");
+                rd = request.getRequestDispatcher("web.jsp");
                 rd.forward(request, response);
             }
+            
             else{
             userDAO.createUser(username, password, email, name, surname, address);
-            rd = request.getRequestDispatcher("/index.jsp");
+            rd = request.getRequestDispatcher("web.jsp");
             rd.forward(request, response);
             }
        
