@@ -35,6 +35,7 @@ public class UserDAO {
             PreparedStatement prepStmt = 
                     connection.prepareStatement("SELECT * from users u where u.username = ?");
             prepStmt.setString(1, username);
+            
             ResultSet rs = prepStmt.executeQuery();
             //result set is empty if there are no users with the same username
             if (rs.next()) {
@@ -46,18 +47,18 @@ public class UserDAO {
         }
         return false;
     }
-    public boolean createUser(String user, String pw, String mail, String gender, String tel, String country, boolean subscribe) {
+  
+    public boolean createUser(String username, String password, String email, String name, String surname, String address) {
         connection=DBConnection.getConnection();
         try {
             PreparedStatement stmt = 
-                    connection.prepareStatement("insert into users values (default, ?, ?, ?, ? ,?, ? ,?)");
-            stmt.setString(1, user);
-            stmt.setString(2, Hash.getHash(pw));
-            stmt.setString(3, mail);
-            stmt.setString(4, "" + gender);
-            stmt.setString(5, tel);
-            stmt.setString(6, country);
-            stmt.setInt(7, subscribe ? 1 : 0);
+                    connection.prepareStatement("insert into users values (default, ?, ?, ?, ?, ? ,?)");
+            stmt.setString(1, username);
+            stmt.setString(2, Hash.getHash(password));
+            stmt.setString(3, email);
+            stmt.setString(4, name);
+            stmt.setString(5, surname);
+            stmt.setString(6, address);
             stmt.executeUpdate();
             connection.commit();
             return true;

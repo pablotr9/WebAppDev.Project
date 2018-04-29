@@ -1,0 +1,46 @@
+<li class="icon" id="regi">
+    <span class="title" id="reg2">Register</span>
+        <span class="formulario"> 
+            <form id="reg" name="reg" method="POST" action="RegistrationController" >     
+               <div class="salto"> </div>              
+                 <div class=form-element> 
+                     <label for=username>Username</label> <br>
+                     <input  type=text name=unamer  id=unamer required> 
+                 </div>
+                <div class=form-element> 
+                     <label for=name>Name</label> <br>
+                     <input type=name name=name id="name"> 
+                 </div>
+                <div class=form-element> 
+                     <label for=surname>Surname</label> <br>
+                     <input type=surname name=surname  id="surname"> 
+                 </div>
+                <div class=form-element> 
+                     <label for=address>Address</label> <br>
+                     <input type=address name=address  id="address"> 
+                 </div>
+                 <div class=form-element> 
+                     <label for=password>Password</label> <br>
+                     <input type=password name=passwordr  id=passwordr required> 
+                 </div>
+                 <div class=form-element> 
+                     <label for=rpasswordr>Repeat the Password</label> <br>
+                     <input type=password name=rpasswordr id=rpasswordr required> 
+                 </div>
+                 <div class=form-element> 
+                     <label for=email>Email</label> <br>
+                     <input type=email name=email id=email required> 
+                 </div>
+                 <div class=form-element> 
+                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="reset" class="btn btn-primary">Reset</button>
+                 </div>   
+         </form>
+    </span>
+</li>
+
+        
+<div class="prueba" id="error"> 
+        <p id="resreg"></p>
+           
+</div>   
