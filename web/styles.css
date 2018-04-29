@@ -155,8 +155,16 @@ a#linkoffer{
     color:black;
     font-size: 15px;
 }
-a#linkoffer:hover{
-    opacity: .7;
+a#linkoffer .col-md-3{
+    margin-top: 30px;
+    color:black;
+    font-size: 15px;
+}
+
+
+a#linkoffer .col-md-3:hover,
+a#linkoffer .col-md-4:hover{
+    transform: scale(1.1);
     transition: all 0.4s ease-out;
 }
 
