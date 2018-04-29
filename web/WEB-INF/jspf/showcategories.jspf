@@ -1,0 +1,132 @@
+<h1> Select a category</h1>
+    <div class = 'row'>
+
+        <div class = 'col-sm-2 col-md-2'></div>
+        <a id="linkoffer" href="viewoffers.jsp">
+            <div class = 'col-sm-3 col-md-3'>
+               <div class = 'thumbnail'>
+                   <img alt = '' src ="carpintero.jpg" >
+               </div>
+
+               <div class = 'caption'>
+                  <h3 class='bg-primary text-center'>Carpenter</h3>
+                  <p>Yo nací con la luna de plata y nací con alma de pirata,</p> 
+                  <p>He nacido rumbero y jarocho trovador de veras, </p>
+
+                  <p>
+                     <button class = 'btn btn-primary'>
+                        View offers
+                     </button> 
+
+                  </p>
+
+               </div>
+            </div>    
+        </a>
+
+        <div class = 'col-sm-2 col-md-2'></div>
+        <a id="linkoffer" href="viewoffers.jsp">
+            <div class = 'col-sm-3 col-md-3'>
+               <div class = 'thumbnail'>
+                  <img src = 'limpiadora.jpg' alt = ''>
+               </div>
+
+               <div class = 'caption'>
+                  <h3  class='bg-primary text-center'>Cleaner</h3>
+                  <p>Los Tiburones Rojos es el mote que acompaña a Veracruz desde su fundación. El apodo surgió de Manuel Seyde, cronista veracruzano en 1943. 
+         </p>
+
+                  <p>
+                     <button class = 'btn btn-primary'>
+                        View offers
+                     </button> 
+
+                  </p>
+
+               </div>
+            </div>
+        </a>
+        <div class = 'col-sm-2 col-md-2'></div>
+
+    </div>
+    <div class = 'row'>
+
+        <div class = 'col-sm-2 col-md-2'></div>
+        <a id="linkoffer" href="viewoffers.jsp">
+            <div class = 'col-sm-3 col-md-3'>
+               <div class = 'thumbnail'>
+                  <img alt = '' src = 'fontanero.jpg' >
+               </div>
+
+               <div class = 'caption'>
+                  <h3 class='bg-primary text-center'>Plumber</h3>
+                  <p>Yo nací con la luna de plata y nací con alma de pirata,</p> 
+                  <p>He nacido rumbero y jarocho trovador de veras, </p>
+
+                  <p>
+                     <button class = 'btn btn-primary'>
+                        View offers
+                     </button> 
+
+                  </p>
+
+               </div>
+            </div>
+        </a>
+        <div class = 'col-sm-2 col-md-2'></div>
+        <a id="linkoffer" href="viewoffers.jsp">
+            <div class = 'col-sm-3 col-md-3'>
+               <div class = 'thumbnail'>
+                  <img src = 'electricista.jpg' alt = ''>
+               </div>
+
+               <div class = 'caption'>
+                  <h3  class='bg-primary text-center'>Electrician</h3>
+                  <p>Los Tiburones Rojos es el mote que acompaña a Veracruz desde su fundación. El apodo surgió de Manuel Seyde, cronista veracruzano en 1943. 
+         </p>
+
+                  <p>
+                     <button class = 'btn btn-primary'>
+                        View offers
+                     </button> 
+
+                  </p>
+
+               </div>
+            </div>
+        </a>
+        <div class = 'col-sm-2 col-md-2'></div>
+
+    </div>
+    <div class = 'row'>
+
+        <div class = 'col-sm-2 col-md-4'></div>
+        <a id="linkoffer" href="viewoffers.jsp">
+            <div class = 'col-sm-3 col-md-4'>
+               <div class = 'thumbnail'>
+                  <img alt = '' src = 'babysitter.jpg' >
+               </div>
+
+               <div class = 'caption'>
+                  <h3 class='bg-primary text-center'>Babysitter</h3>
+                  <p>Yo nací con la luna de plata y nací con alma de pirata,</p> 
+                  <p>He nacido rumbero y jarocho trovador de veras, </p>
+
+                  <p>
+                     <button class = 'btn btn-primary'>
+                        View offers
+                     </button> 
+
+                  </p>
+
+               </div>
+            </div>
+        </a>
+
+        <div class = 'col-sm-2 col-md-4'></div>
+    </div>
+
+
+    <div class="espacio"></div>
+
+                    

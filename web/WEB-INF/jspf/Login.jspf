@@ -1,7 +1,7 @@
 <li class="icon">
     <span class="title">Login</span>
     <span class="formulario"> 
-        <form method="post" action="LoginController" >     
+        <form  id="log" name="log" method="POST" action="LoginController" >     
           <div class="salto"> </div>
             <div class=form-element> 
                 <label for=username>Username</label> <br>
@@ -20,12 +20,7 @@
 </li>
 
 <div class="prueba" id="error"> 
-    <ul>
-        <c:forEach items="${requestScope.errors}" var="errors"
-            varStatus="err"
-            begin="0" step="1">
-            <li>${errors}</li></br>
-        </c:forEach>   
-    </ul>
+        <p id="resreg2"></p>     
 </div>   
+
     

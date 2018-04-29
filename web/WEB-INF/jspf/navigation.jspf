@@ -9,7 +9,7 @@
     
 <c:if test ="${sessionScope.USER!=null}" var="USER" >
     <ul>
-        <a href="#t1"> <li class="icon" id="imagen"><img src="logo4.png" alt="logo"></li></a>
+        <a href="#t1"> <li class="icon2"><img src="logo4.png" alt="logo"></li></a>
         <a href="#t1"><li class="icon" id="uno">Home</li></a>
         <a href="#t2"><li class="icon" id="dos">View offers</li></a>
         <a href="#t3"><li class="icon" id="tres">Post an offer</li></a>

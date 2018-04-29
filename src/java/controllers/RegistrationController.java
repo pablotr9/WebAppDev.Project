@@ -33,13 +33,14 @@ public class RegistrationController extends HttpServlet {
             throws ServletException, IOException {
             ArrayList<String> errors = new ArrayList();
             RequestDispatcher rd;
-          
+            response.setContentType("text/html;charset=UTF-8");
+            
             boolean hasErrors=false;
-            String username = request.getParameter("uname");
+            String username = request.getParameter("unamer");
             String name = request.getParameter("name");
             String surname = request.getParameter("surname");
-            String password = request.getParameter("password");
-            String rpassword = request.getParameter("rpassword");
+            String password = request.getParameter("passwordr");
+            String rpassword = request.getParameter("rpasswordr");
             String email=request.getParameter("email");
             String address=request.getParameter("address");
            //Ewrsdf ejej
@@ -52,35 +53,20 @@ public class RegistrationController extends HttpServlet {
            System.out.println(address);
            
             if(userDAO.userExists(username)){
-                hasErrors=true;
-                errors.add("Username already exists");
+                hasErrors =true;
+                errors.add("There was an error creating your account,\n the username already exists!");
             }
-            if(password!=rpassword){
-                hasErrors=true;
-                errors.add("The passwords aren't the same");
-            }
-            if(password.length()<6 ){
-                hasErrors=true;
-                errors.add("The password is too short");
-            }
-            if(username.length()<6 ){
-                hasErrors=true;
-                errors.add("The username is too short");
-            }
-             if(address.length()<6 ){
-                hasErrors=true;
-                errors.add("The address is too short");
-            }
+             
+             
             if(hasErrors){
-                request.setAttribute("ERRORS", errors);
+                request.setAttribute("errors",errors);
                 rd = request.getRequestDispatcher("web.jsp");
                 rd.forward(request, response);
-            }
-            
-            else{
+            }else{
             userDAO.createUser(username, password, email, name, surname, address);
             rd = request.getRequestDispatcher("web.jsp");
             rd.forward(request, response);
             }
+
     }
 }

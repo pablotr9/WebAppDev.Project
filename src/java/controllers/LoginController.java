@@ -32,34 +32,21 @@ UserDAO userDAO=UserDAO.getInstance();
             String username = request.getParameter("uname");
             String password = request.getParameter("password");
             
+            System.out.println(username);
+            System.out.println(password);
+            
             if(userDAO.isPasswordCorrect(username, password)){
-                request.getSession().setAttribute("user", username);
-                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                request.getSession().setAttribute("USER", username);
+                RequestDispatcher rd = request.getRequestDispatcher("weblogged.jsp");
                 rd.forward(request, response);
             } else {
                 // does not exist
-                errors.add("User does not exist or password is incorrect");
-                request.setAttribute("LOGIN_ERROR", errors);
-                RequestDispatcher rd = request.getRequestDispatcher("/LoginView");
+                errors.add("There was an error in your credentials,\n username or password are incorrect");
+                request.setAttribute("errors", errors);
+                RequestDispatcher rd = request.getRequestDispatcher("web.jsp");
                 rd.forward(request, response);
             }
-            
-           
-            
-            //check in db if username+password exists
-            if( false ){
-                errors.add("User doesnt exist!");
-            }else if( ! false){
-                errors.add("Password is incorrect");
-            }
-            
-            if(errors.isEmpty()){
-                request.getSession().setAttribute("USER",username);                    
-                request.getRequestDispatcher("web.jsp").forward(request, response); // fix
-            }else{
-                request.setAttribute("errors", errors);
-                request.getRequestDispatcher("web.jsp").forward(request, response);  //fix
-            }
+          
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

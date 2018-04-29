@@ -1,11 +1,11 @@
 <li class="icon" id="regi">
     <span class="title" id="reg2">Register</span>
         <span class="formulario"> 
-            <form id="reg" method=post action=RegistrationController >     
+            <form id="reg" name="reg" method="POST" action="RegistrationController" >     
                <div class="salto"> </div>              
                  <div class=form-element> 
                      <label for=username>Username</label> <br>
-                     <input  type=text name=uname  id=uname required> 
+                     <input  type=text name=unamer  id=unamer required> 
                  </div>
                 <div class=form-element> 
                      <label for=name>Name</label> <br>
@@ -21,11 +21,11 @@
                  </div>
                  <div class=form-element> 
                      <label for=password>Password</label> <br>
-                     <input type=password name=password  id=password required> 
+                     <input type=password name=passwordr  id=passwordr required> 
                  </div>
                  <div class=form-element> 
-                     <label for=rpassword>Repeat the Password</label> <br>
-                     <input type=password name=rpassword id=rpassword required> 
+                     <label for=rpasswordr>Repeat the Password</label> <br>
+                     <input type=password name=rpasswordr id=rpasswordr required> 
                  </div>
                  <div class=form-element> 
                      <label for=email>Email</label> <br>
@@ -38,12 +38,9 @@
          </form>
     </span>
 </li>
-<c:if test ="${not empty requestScope.errors}" var="errors" >
-    <ul>
-        <c:forEach items="${requestScope.errors}" var="errors"
-            varStatus="err"
-            begin="0" step="1">
-            <li>${errors}</li></br>
-        </c:forEach>       
-    </ul>                
-</c:if>
+
+        
+<div class="prueba" id="error"> 
+        <p id="resreg"></p>
+           
+</div>   
