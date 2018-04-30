@@ -32,25 +32,25 @@
 
                 $('#resreg').text("");
                   $(".error").remove();
-
+                    
                   if ($('#unamer').val().length < 6) {
                   e.preventDefault();
                     $('#resreg').html( $('#resreg').val() + "Username needs 6+ chars");
                   }else if ($('#name').val().length < 1) {
                   e.preventDefault();
-                    $('#resreg').html( "<br><br>Name cannot be empty!");
+                    $('#resreg').html( "Name cannot be empty!");
                   }else if ($('#surname').val().length < 1) {
                   e.preventDefault();
-                    $('#resreg').html("<br><br><br><br><br>Surname needs 6+ chars");
+                    $('#resreg').html("Surname needs 6+ chars");
                   }else if ($('#address').val().length < 1) {
                   e.preventDefault();
-                    $('#resreg').html( "<br><br><br><br><br><br><br>Address cannot be empty!");
+                    $('#resreg').html( "Address cannot be empty!");
                   }else if ($('#passwordr').val().length < 6) {
                   e.preventDefault();
-                    $('#resreg').html( "<br><br><br><br><br><br><br><br><br><br>Password needs 6+ chars");
+                    $('#resreg').html( "Password needs 6+ chars");
                   }else if ($('#passwordr').val() !=  $('#rpasswordr').val() ) {
                   e.preventDefault();
-                    $('#resreg').html("<br><br><br><br><br><br><br><br><br>Both password have to be equal!");
+                    $('#resreg').html("Both password have to be equal!");
                   }else{
                       var form = $('#reg');
                         form.submit(function () {
@@ -79,10 +79,10 @@
 
                   if ($('#uname').val().length < 6) {
                   e.preventDefault();
-                    $('#resreg2').html(  "<br><br>Username needs 6+ chars");
+                    $('#resreg2').html(  "Username needs 6+ chars");
                 }else if ($('#password').val().length < 6) {
                   e.preventDefault();
-                    $('#resreg2').html( "<br><br><br><br><br>Password must be 6+ chars long");
+                    $('#resreg2').html( "Password must be 6+ chars long");
                   }else{
                       var form = $('#log');
                         form.submit(function () {
@@ -117,7 +117,7 @@
                  
                  <li class="icon"><span class="title">Alempa</span> <span class="hint">Esto es textillo sobre nuestra pagina<br/> Ponemos textillo sobre de que va xd</span></li>   
                  <div class="prueba2" id="error"> 
-                     <p id="resreg">
+                     <p id="resreg3">
                          
                          <c:if test ="${not empty requestScope.errors}" var="errors" >
                                 <c:forEach items="${requestScope.errors}" var="errors"
@@ -136,7 +136,7 @@
                      
              </div> 
                  
-             <div class="page" id="p3">
+             <div class="page" id="p3" style="overflow: scroll;">
                    <%@include file="/WEB-INF/jspf/Register.jspf" %>
                    
              </div>

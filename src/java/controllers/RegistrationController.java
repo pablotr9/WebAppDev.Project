@@ -56,6 +56,11 @@ public class RegistrationController extends HttpServlet {
                 hasErrors =true;
                 errors.add("There was an error creating your account,\n the username already exists!");
             }
+            
+            if(userDAO.emailExists(email)){
+                hasErrors =true;
+                errors.add("Exists an account with the email you entered");
+            }
              
              
             if(hasErrors){
@@ -63,6 +68,9 @@ public class RegistrationController extends HttpServlet {
                 rd = request.getRequestDispatcher("web.jsp");
                 rd.forward(request, response);
             }else{
+                
+            errors.add("The account was created succesfully");
+            request.setAttribute("errors",errors);
             userDAO.createUser(username, password, email, name, surname, address);
             rd = request.getRequestDispatcher("web.jsp");
             rd.forward(request, response);

@@ -47,6 +47,30 @@ public class UserDAO {
         }
         return false;
     }
+    
+    public boolean emailExists(String email){
+        connection=DBConnection.getConnection();
+         try {
+            PreparedStatement prepStmt = 
+                    connection.prepareStatement("SELECT * from users u where u.email = ?");
+            prepStmt.setString(1, email);
+            
+            ResultSet rs = prepStmt.executeQuery();
+            //result set is empty if there are no users with the same username
+            if (rs.next()) {
+                rs.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    
+    
+    
+    
   
     public boolean createUser(String username, String password, String email, String name, String surname, String address) {
         connection=DBConnection.getConnection();

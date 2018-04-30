@@ -7,6 +7,8 @@ html, body, .page {
   color: #fff;
   overflow: hidden; 
 }
+
+
  
 .logged {
     background: black;    
@@ -101,6 +103,14 @@ html, body, .page {
     transform: translateX(0%);
   }
 }
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
 
 
 
@@ -114,14 +124,14 @@ html, body, .page {
     animation: 1.1s ease-in-out 0s 1 slide;
     background: #f7f7f7;
     z-index: 5;
-    overflow: auto;  
+    overflow: auto;
 }
 
 .mypage#viewoffer{
-    animation: .7s ease-in-out 0s 1 leftToRight;
+    animation: .9s ease-in-out 0s 1 leftToRight;
 }
 .mypage#viewoffer h1{
-    animation: .7s ease-in-out 0s 1 leftToRight;
+    animation: .9s ease-in-out 0s 1 leftToRight;
 }
 
 
@@ -254,8 +264,12 @@ a#linkoffer .col-md-4:hover{
 #t3:target #p3,
 #t4:target #p4,
 #t5:target #p5 {
-  transform: translateX(-190%);
+  transform: translateX(-191%);
   transition-delay: .4s !important;
+}
+
+#t3:target #p3{
+  transform: translateX(-190%);
 }
 
 #t2:target #p1, 
@@ -282,10 +296,23 @@ ul .icon:hover {
   opacity: 0.5;
 }
 
+
+.row#login{
+    margin-left: 100px;
+    
+}
+
+.row#register{
+    margin-left: 100px;
+    margin-top: -30px;
+}
+
 .page .icon .title {
   line-height: 1;
   font-size: 70px;
 }
+
+
 
 #t2:target ul .icon,
 #t3:target ul .icon,
@@ -301,6 +328,15 @@ ul .icon:hover {
 #t4:target #cinco {
     padding-left: 5px;
   transform: scale(1.1) ;
+}
+
+p#resreg2{
+    color:red;
+    font-size: 30px;
+}
+p#resreg{
+    color:red;
+    font-size: 30px;
 }
 
 .element{
@@ -360,11 +396,11 @@ a {
 }
 
 .formulario .form-element{
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 .formulario .salto{
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 .formulario .btn{

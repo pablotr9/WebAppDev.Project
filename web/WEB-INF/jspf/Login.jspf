@@ -1,26 +1,38 @@
-<li class="icon">
-    <span class="title">Login</span>
-    <span class="formulario"> 
-        <form  id="log" name="log" method="POST" action="LoginController" >     
-          <div class="salto"> </div>
-            <div class=form-element> 
-                <label for=username>Username</label> <br>
-                <input  type=text name=uname id=uname> 
-            </div> 
-            <div class=form-element> 
-                <label for=password>Password</label> <br>
-                <input type=password name=password id=password> 
-            </div>               
-              <div class=form-element> 
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="reset" class="btn btn-primary">Reset</button>
-            </div>
-        </form>
-    </span>
-</li>
 
-<div class="prueba" id="error"> 
-        <p id="resreg2"></p>     
-</div>   
+    <div class="row" id="login">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            <span class="title">Login</span>
+            <p id="resreg2"></p>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+    <div class="row" id="login">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <span class="formulario"> 
+                <form  id="log" name="log" method="POST" action="LoginController" > 
+                    <div class=form-element> 
+                        <label for=username>Username</label> <br>
+                        <input  type=text name=uname id=uname> 
+                    </div>
+                    <div class=form-element> 
+                        <label for=password>Password </label>    <br>
+                        <input type=password name=password id=password> 
+                    </div>               
+                      <div class=form-element> 
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                    </div>
+                </form>
+            </span>
+        </div>
+        <div class="col-md-6">
+        </div>
+        
+    </div>
+    
+
+
 
     
