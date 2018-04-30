@@ -7,7 +7,7 @@ html, body, .page {
   color: #fff;
   overflow: hidden; 
 }
-
+ 
 .logged {
     background: black;    
     width: 100%;
@@ -17,35 +17,40 @@ html, body, .page {
     color: black;
 }
 .topnav{
-    height: 90px;
-    background: black;
+    height: 50px;
+    background: #f9f9f9;
     text-align: center;
 }
 
 
  ul#loggedin {
      position: absolute;
-    left: 17%;
+    left: 25%;
     top: 0;
   display: inline;
   list-style: none;
   
-  
+ }
+ 
+ ul#loggedin img{
+    z-index: 20;
   
  }
  
+ 
  .icon2img{
     position:absolute;
-    top: -45px;
-    left: -195px;
+    top: -58px;
+    left: -210px;
  }
+  
  
  ul#loggedin li{
      margin:0;
   text-decoration: none;
   float: left;
-  color: white;
-  font-size: 30px;
+  color: black;
+  font-size: 20px;
   padding-right: 12px;
   padding-left: 12px;
   font-family: 'lato';
@@ -53,31 +58,29 @@ html, body, .page {
  }
  
   ul#loggedin .icon2{
-  background-color: #191919;
+  background-color: #e9e9e9;
   margin-top: 0;
-  padding-top: 20px;
-  height: 80px;
-  border-right: 0.5px solid;
-  border-bottom: 0.5px solid;
-  border-top: 0.5px solid;
+  padding-top: 10px;
+  height: 50px;
+  border-right: 0px solid;
+  border-bottom: 0px solid;
+  border-top: 0px solid;
   border-radius: 2px;
   border-color: black;
   
  }
  
   ul#loggedin .icon2#izk{
-  border-left: 0.5px solid;
+  border-left: 0px solid;
   border-color: black;
   
  }
  
- ul#loggedin li:hover{
+ ul#loggedin .icon2:hover{
     opacity: 0.8;
-    font-size: 32px;
+    font-size: 22px;
+    background-color: #c2c2c2;
  }
- 
-
-
  
 
 @keyframes slide {
@@ -90,33 +93,85 @@ html, body, .page {
 }
 
 
+@keyframes leftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+
 
 .mypage{
     margin:0;
     position: absolute;   
-    top: 79px;
+    top: 50px;
     left: 0;
     width:100%;
     height: 100%;
-    animation: 1.2s ease-in-out 0s 1 slide;
-    background: tomato;
+    animation: 1.1s ease-in-out 0s 1 slide;
+    background: #f7f7f7;
     z-index: 5;
-    overflow: auto;
-    
+    overflow: auto;  
 }
+
+.mypage#viewoffer{
+    animation: .7s ease-in-out 0s 1 leftToRight;
+}
+.mypage#viewoffer h1{
+    animation: .7s ease-in-out 0s 1 leftToRight;
+}
+
+
+
+.mypage form{
+    margin-top: 40px;
+    margin-left: 550px;
+}
+
+
+
+
+
+.mypage#home{
+        background-image: url("casa_1.jpg");
+        background-size: 100% 100%; 
+}
+
+
 .espacio{
     margin-top: 100px;
 }
 
 .mypage h1{
-    margin-left: 500px;
+    margin-left: 650px;
     margin-top: 15px;
     padding-top: 5px;
     color: black;
-   font-family: 'lato';
-    font-size: 40px;
-    font-weight: 800;
-    text-decoration: underline;
+   font-family: "Lucida Sans Unicode";
+    font-size: 32px;
+    font-weight: 700;
+    animation: 1.4s ease-in 0s 1 slide;
+}
+
+.mypage h1#selectcat{
+    margin-left: 550px;
+}
+
+
+
+
+.mypage h2{
+    margin-left: 666px;
+    margin-top: 123px;
+    padding-top: 5px;
+    color: black;
+   font-family: "Lucida Sans Unicode";
+    font-size: 18px;
+    font-weight: 700;
+    animation: 1.4s ease-in 0s 1 slide;
 }
 
 
@@ -159,6 +214,9 @@ a#linkoffer .col-md-3{
     margin-top: 30px;
     color:black;
     font-size: 15px;
+    padding-top: 10px;
+    background-color: #efefef;
+    border-radius: 10px;
 }
 
 
@@ -166,6 +224,7 @@ a#linkoffer .col-md-3:hover,
 a#linkoffer .col-md-4:hover{
     transform: scale(1.1);
     transition: all 0.4s ease-out;
+    z-index: 20;
 }
 
 .bg-primary{
@@ -242,6 +301,10 @@ ul .icon:hover {
 #t4:target #cinco {
     padding-left: 5px;
   transform: scale(1.1) ;
+}
+
+.element{
+    margin: 15px ;
 }
 
 .ct ul {

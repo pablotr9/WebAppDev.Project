@@ -1,9 +1,9 @@
     <div class="topnav">
         <ul id="loggedin">
-            <a href="weblogged.jsp"><li class="icon2img"><img src="logo4.png" alt="logo"></li></a>
+            <a href="weblogged.jsp"><li class="icon2img"><img src="logo4.png" width="160" height="180" alt="logo"></li></a>
             <a href="weblogged.jsp"><li class="icon2" id="izk">Home</li></a>
             <a href="viewoffers.jsp"><li class="icon2">View offers</li></a>
-            <a href="#t3"><li class="icon2">Post an offer</li></a>
+            <a href="postoffer.jsp"><li class="icon2">Post an offer</li></a>
             <a href="#t4"><li class="icon2">View my offers</li></a>
             <a href="LogoutController"><li class="icon2">Logout</li></a>
         </ul>

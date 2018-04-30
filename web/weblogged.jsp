@@ -23,11 +23,10 @@
 
             
             <div class="title2"> Alempa </div>
-            <div class="mypage">
+            <div class="mypage" id="home">
                 
-                <h1> Welcome ${sessionScope.USER} </h1>
-                jejej <br> jejej <br> jejej <br> jejej <br> jejej <br> jejej <br> jejej <br> jejej <br> 
-                jejej <br> jejej <br> jejej <br> jejej <br> je
+                <h1> Welcome back ${sessionScope.USER} </h1>
+                <h2> Don't miss out our offers to keep your home flawless <br> </h2>
                 
             </div>
             

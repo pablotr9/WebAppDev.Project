@@ -1,4 +1,4 @@
-<h1> Select a category</h1>
+<h1 id="selectcat"> Select a category</h1>
     <div class = 'row'>
 
         <div class = 'col-sm-2 col-md-2'></div>
@@ -100,9 +100,9 @@
     </div>
     <div class = 'row'>
 
-        <div class = 'col-sm-2 col-md-4'></div>
+        <div class = 'col-sm-2 col-md-2'></div>
         <a id="linkoffer" href="viewoffers.jsp">
-            <div class = 'col-sm-3 col-md-4'>
+            <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
                   <img alt = '' src = 'babysitter.jpg' >
                </div>
@@ -123,7 +123,9 @@
             </div>
         </a>
 
-        <div class = 'col-sm-2 col-md-4'></div>
+        <div class = 'col-sm-2 col-md-2'></div>
+        <div class = 'col-sm-2 col-md-3'></div>
+        <div class = 'col-sm-2 col-md-2'></div>
     </div>
 
 

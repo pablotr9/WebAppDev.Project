@@ -23,7 +23,7 @@
 
             
             <div class="title2"> Alempa </div>
-            <div class="mypage">
+            <div class="mypage" id="viewoffer">
                 
                 <c:if test ="${requestScope.Offers==null}" var="Offers" >
                     <%@include file="/WEB-INF/jspf/showcategories.jspf" %>
