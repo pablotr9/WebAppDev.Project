@@ -9,6 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import model.Offer;
 import util.DBConnection;
 import util.Hash;
 
@@ -45,5 +48,65 @@ public class OfferDAO {
             ex.printStackTrace();
         }
         return false;
+    }
+    
+    public Offer getOffer(int id) {
+        connection=DBConnection.getConnection();
+        Offer offer = null;
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("SELECT * FROM OFFERS WHERE id = ?");
+            prepStmt.setInt(1, id);
+            ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                offer = new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5), rs.getString(6));
+            }
+            prepStmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return offer;
+    }
+    
+    public List<Offer> getOffers() {
+        connection=DBConnection.getConnection();
+        List<Offer> offers = new ArrayList<>();
+        
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("select * from offers");
+            ResultSet rs = prepStmt.executeQuery();
+            
+            while (rs.next()) {
+                offers.add(new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5), rs.getString(6)));
+            }
+            
+            prepStmt.close();
+        } 
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return offers;
+    }
+    
+    public List<Offer> getOffersCategory(String category) {
+        connection=DBConnection.getConnection();
+        List<Offer> offers = new ArrayList<>();
+        
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("select * from offers where category = ?");
+            prepStmt.setString(1, category);
+            ResultSet rs = prepStmt.executeQuery();
+            
+            while (rs.next()) {
+                offers.add(new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5), rs.getString(6)));
+            }
+            
+            prepStmt.close();
+        } 
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return offers;
     }
 }

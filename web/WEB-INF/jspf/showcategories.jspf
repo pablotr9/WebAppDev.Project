@@ -2,7 +2,7 @@
     <div class = 'row'>
 
         <div class = 'col-sm-2 col-md-2'></div>
-        <a id="linkoffer" href="viewoffers.jsp">
+        <a id="linkoffer" href="SelectCategoryController?category=carpenter">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
                    <img alt = '' src ="carpintero.jpg" >
@@ -12,14 +12,11 @@
                   <h3 class='bg-primary text-center'>Carpenter</h3>
                   <p>Yo nací con la luna de plata y nací con alma de pirata,</p> 
                   <p>He nacido rumbero y jarocho trovador de veras, </p>
-
                   <p>
                      <button class = 'btn btn-primary'>
                         View offers
                      </button> 
-
                   </p>
-
                </div>
             </div>    
         </a>
