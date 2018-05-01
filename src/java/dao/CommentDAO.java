@@ -9,6 +9,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import model.Comment;
+import model.Offer;
 import util.DBConnection;
 import util.Hash;
 
@@ -44,5 +48,27 @@ public class CommentDAO {
             ex.printStackTrace();
         }
         return false;
+    }
+    
+    public List<Comment> getComments(int offerId) {
+        connection = DBConnection.getConnection();
+        List<Comment> comments = new ArrayList<>();
+        
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("select * from comment where offerId = ?");
+            prepStmt.setInt(1, offerId);
+            ResultSet rs = prepStmt.executeQuery();
+            
+            while (rs.next()) {
+                comments.add(new Comment(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5)));
+            }
+            
+            prepStmt.close();
+        } 
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return comments;
     }
 }

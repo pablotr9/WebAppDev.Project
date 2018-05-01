@@ -13,11 +13,11 @@
             <span class="formulario"> 
                 <form  id="log" name="log" method="POST" action="LoginController" > 
                     <div class=form-element> 
-                        <label for=username>Username</label> <br>
+                        <label for=username>Username</label><br>
                         <input  type=text name=uname id=uname> 
                     </div>
                     <div class=form-element> 
-                        <label for=password>Password </label>    <br>
+                        <label for=password>Password</label><br>
                         <input type=password name=password id=password> 
                     </div>               
                       <div class=form-element> 
