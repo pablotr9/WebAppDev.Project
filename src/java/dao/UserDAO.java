@@ -66,11 +66,6 @@ public class UserDAO {
         }
         return false;
     }
-    
-    
-    
-    
-    
   
     public boolean createUser(String username, String password, String email, String name, String surname, String address) {
         connection=DBConnection.getConnection();
@@ -109,5 +104,24 @@ public class UserDAO {
         return false;
     }
     
-    
+    public int getUserId(String username){
+        int res = 0;
+        connection = DBConnection.getConnection();
+        
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("SELECT * from users u where u.username = ?");
+            prepStmt.setString(1, username);
+            ResultSet rs = prepStmt.executeQuery();
+            //result set is empty if there are no users with the same username
+            if (rs.next()) {
+                int usertype = rs.getInt("id");
+                rs.close();
+                res = usertype;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return res;
+    }
 }
