@@ -37,6 +37,8 @@ UserDAO userDAO=UserDAO.getInstance();
             
             if(userDAO.isPasswordCorrect(username, password)){
                 request.getSession().setAttribute("USER", username);
+                int userId = userDAO.getUserId(username);
+                request.getSession().setAttribute("userId", userId);
                 RequestDispatcher rd = request.getRequestDispatcher("weblogged.jsp");
                 rd.forward(request, response);
             } else {
