@@ -40,7 +40,7 @@ public class GetCommentsController extends HttpServlet {
         comments = commentDAO.getComments(Integer.parseInt(request.getParameter("offerId")));
         request.setAttribute("Comments", comments);
         RequestDispatcher rd;
-        rd = request.getRequestDispatcher("/VISTADEUNASOLAOFERTA.jsp");
+        rd = request.getRequestDispatcher("/VISTADECOMMENTS.jsp");
         rd.forward(request, response);
     }
 
