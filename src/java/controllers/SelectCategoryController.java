@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Offer;
+import model.User;
 
 /**
  *
@@ -35,8 +36,15 @@ public class SelectCategoryController extends HttpServlet {
             throws ServletException, IOException {
         
         List<Offer> offers = new ArrayList<>();
+        List<User> users = new ArrayList<>();
+        User user = null;
         offers = offerDAO.getOffersCategory((String)request.getAttribute("category"));
         request.setAttribute("Offers", offers);
+        for(Offer o : offers){
+            user = offerDAO.getCreator(o.getUserId());
+            users.add(user);
+        }
+        request.setAttribute("Users", users);
         RequestDispatcher rd;
         rd = request.getRequestDispatcher("/viewoffers.jsp");
         rd.forward(request, response);
