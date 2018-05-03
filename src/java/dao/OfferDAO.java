@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Offer;
 import model.User;
 import util.DBConnection;
@@ -34,7 +36,19 @@ public class OfferDAO {
     private OfferDAO() {}
     
     public boolean createOffer(String title, String description, double price, int userId, String category) {
-        connection=DBConnection.getConnection();
+        connection = DBConnection.getConnection();
+        Offer offer = getOffersByUser(userId);
+        
+        if(offer != null){
+            try {
+                PreparedStatement stmt = connection.prepareStatement("DELETE FROM offers WHERE id = ?");
+                stmt.setInt(1, offer.getId());
+                stmt.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(OfferDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         try {
             PreparedStatement stmt = connection.prepareStatement("insert into offers values (default, ?, ?, ?, ?, ?)");
             stmt.setString(1, title);
@@ -48,11 +62,29 @@ public class OfferDAO {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        
         return false;
     }
     
+    public Offer getOffersByUser(int userId) {
+        connection = DBConnection.getConnection();
+        Offer offer = null;
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("SELECT * FROM OFFERS WHERE userId = ?");
+            prepStmt.setInt(1, userId);
+            ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                offer = new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5), rs.getString(6));
+            }
+            prepStmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return offer;
+    }
+    
     public Offer getOffer(int id) {
-        connection=DBConnection.getConnection();
+        connection = DBConnection.getConnection();
         Offer offer = null;
         try {
             PreparedStatement prepStmt = connection.prepareStatement("SELECT * FROM OFFERS WHERE id = ?");
