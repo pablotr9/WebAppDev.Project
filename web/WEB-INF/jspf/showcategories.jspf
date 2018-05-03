@@ -2,7 +2,7 @@
     <div class = 'row'>
 
         <div class = 'col-sm-2 col-md-2'></div>
-        <a id="linkoffer" href="SelectCategoryController?category=carpenter">
+        <a id="linkoffer" href="SelectCategoryController?category=Carpenter">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
                    <img alt = '' src ="carpintero.jpg" >
@@ -22,7 +22,7 @@
         </a>
 
         <div class = 'col-sm-2 col-md-2'></div>
-        <a id="linkoffer" href="viewoffers.jsp">
+        <a id="linkoffer" href="SelectCategoryController?category=Cleaner">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
                   <img src = 'limpiadora.jpg' alt = ''>
@@ -49,7 +49,7 @@
     <div class = 'row'>
 
         <div class = 'col-sm-2 col-md-2'></div>
-        <a id="linkoffer" href="viewoffers.jsp">
+        <a id="linkoffer" href="SelectCategoryController?category=Plumber">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
                   <img alt = '' src = 'fontanero.jpg' >
@@ -71,7 +71,7 @@
             </div>
         </a>
         <div class = 'col-sm-2 col-md-2'></div>
-        <a id="linkoffer" href="viewoffers.jsp">
+        <a id="linkoffer" href="SelectCategoryController?category=Electrician">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
                   <img src = 'electricista.jpg' alt = ''>
@@ -95,7 +95,7 @@
     <div class = 'row'>
 
         <div class = 'col-sm-2 col-md-2'></div>
-        <a id="linkoffer" href="viewoffers.jsp">
+        <a id="linkoffer" href="SelectCategoryController?category=Babysitter">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
                   <img alt = '' src = 'babysitter.jpg' >

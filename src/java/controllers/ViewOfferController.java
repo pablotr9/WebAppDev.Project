@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Comment;
 import model.Offer;
+import model.User;
 
 /**
  * Checks if the username already exists. If exists the login page is reloaded.
@@ -33,9 +34,15 @@ public class ViewOfferController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             Offer offer = new Offer();
             offer = offerDAO.getOffer(Integer.parseInt(request.getParameter("offerId")));
+            
+            List<User> users = new ArrayList<>();
+            User user = null;
+            user = offerDAO.getCreator(offer.getUserId());
+            
             request.setAttribute("Offer", offer);
+            request.setAttribute("User", user);
             RequestDispatcher rd;
-            rd = request.getRequestDispatcher("/viewoffer.jsp");
+            rd = request.getRequestDispatcher("viewoffer.jsp");
             rd.forward(request, response);
     }
 }

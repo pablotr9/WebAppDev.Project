@@ -36,10 +36,17 @@ public class OfferController extends HttpServlet {
             double price = Double.parseDouble(request.getParameter("price"));
             int userId = (int) request.getSession().getAttribute("userId");
             String category = request.getParameter("category");
+            System.out.println(title);
+            System.out.println(description);
+            System.out.println(price);
+            System.out.println(category);
+            
+            
             
             offerDAO.createOffer(title, description, price, userId, category);
-            rd = request.getRequestDispatcher("/index.jsp");
+            rd = request.getRequestDispatcher("viewoffers.jsp");
             rd.forward(request, response);
+            
         
     }
 }

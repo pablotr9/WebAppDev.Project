@@ -31,14 +31,20 @@ public class CommentController extends HttpServlet {
             RequestDispatcher rd;
             String error ="";
             boolean hasErrors=false;
+            System.out.println("jejejesadas " + request.getParameter("offerId"));
             
             String title = request.getParameter("title");
-            String text = request.getParameter("text");
+            String text = request.getParameter("texto");
             int offerId = Integer.parseInt(request.getParameter("offerId"));
             int userId = (int) request.getSession().getAttribute("userId");
+           System.out.println(title);
+           System.out.println(text);
+           System.out.println(offerId);
+           System.out.println(userId);
+           
             
             commentDAO.createComment(title, text, offerId, userId);
-            rd = request.getRequestDispatcher("/index.jsp");
+            rd = request.getRequestDispatcher("web.jsp");
             rd.forward(request, response);
         
     }

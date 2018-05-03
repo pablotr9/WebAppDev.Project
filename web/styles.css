@@ -8,6 +8,12 @@ html, body, .page {
   overflow: hidden; 
 }
 
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    height:0px;
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
 
  
 .logged {
@@ -111,6 +117,19 @@ html, body, .page {
     transform: translateX(0%);
   }
 }
+
+
+
+.myoffer{
+    background-color: #c4c4c4;
+}
+
+.title4{
+    font-size: 45px;
+    text-align: center;
+    color: navy;
+}
+
 
 
 
@@ -229,6 +248,39 @@ a#linkoffer .col-md-3{
     border-radius: 10px;
 }
 
+.oferta {
+    background-color: #abacad;
+    color: black;
+    border-radius: 6px 6px 6px 6px;
+    padding-right: 15px;
+    border-bottom-style:solid ;
+    border-bottom-color:white ;
+}
+
+.oferta .title3{
+    padding-top: 10px;
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.oferta .price{
+    margin-bottom: 15px;
+    font-size: 38px;
+    float:right;
+}
+
+.oferta .description{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.myoffer .description{
+    margin-top: 28px;
+    font-size: 18px;
+    margin-bottom:5px;
+}
+
 
 a#linkoffer .col-md-3:hover,
 a#linkoffer .col-md-4:hover{
@@ -256,6 +308,7 @@ a#linkoffer .col-md-4:hover{
 #p3 { background: gold; }
 #p4 { background: deeppink;}
 #p5 { background: rebeccapurple; }
+
 
 
 
