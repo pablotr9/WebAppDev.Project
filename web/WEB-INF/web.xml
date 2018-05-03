@@ -16,6 +16,38 @@
         <servlet-name>SelectCategoryController</servlet-name>
         <servlet-class>controllers.SelectCategoryController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OfferController</servlet-name>
+        <servlet-class>controllers.OfferController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApplicationController</servlet-name>
+        <servlet-class>controllers.ApplicationController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CommentController</servlet-name>
+        <servlet-class>controllers.CommentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewMyOffers</servlet-name>
+        <servlet-class>controllers.ViewMyOffers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewOfferController</servlet-name>
+        <servlet-class>controllers.ViewOfferController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OfferController</servlet-name>
+        <url-pattern>/OfferController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationController</servlet-name>
+        <url-pattern>/ApplicationController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CommentController</servlet-name>
+        <url-pattern>/CommentController</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -31,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>SelectCategoryController</servlet-name>
         <url-pattern>/SelectCategoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewMyOffers</servlet-name>
+        <url-pattern>/ViewMyOffers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewOfferController</servlet-name>
+        <url-pattern>/ViewOfferController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

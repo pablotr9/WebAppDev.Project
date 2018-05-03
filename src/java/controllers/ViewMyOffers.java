@@ -7,21 +7,21 @@ package controllers;
 
 import dao.OfferDAO;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.RequestDispatcher;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+import java.util.ArrayList;
 import model.Offer;
-import model.User;
 
 /**
  *
- * @author Ale
+ * @author Pablo
  */
-public class SelectCategoryController extends HttpServlet {
+public class ViewMyOffers extends HttpServlet {
     OfferDAO offerDAO = OfferDAO.getInstance();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,20 +35,13 @@ public class SelectCategoryController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<Offer> offers = new ArrayList();
-        List<User> users = new ArrayList<>();
-        User user = null;
-        offers = offerDAO.getOffersCategory((String)request.getParameter("category"));
+        List<Offer> offers = new ArrayList<>();
         
-        for(Offer o : offers){
-            user = offerDAO.getCreator(o.getUserId());
-            users.add(user);
-        }
-        request.setAttribute("cat",request.getParameter("category"));
-        request.setAttribute("Users", users);
+        int userId = (int) request.getSession().getAttribute("userId");
+        offers = offerDAO.getOfferUser(userId);
         request.setAttribute("Offers", offers);
-        RequestDispatcher rd;
-        rd = request.getRequestDispatcher("viewoffers.jsp");
+        RequestDispatcher rd; 
+        rd = request.getRequestDispatcher("viewmyoffers.jsp");
         rd.forward(request, response);
     }
 

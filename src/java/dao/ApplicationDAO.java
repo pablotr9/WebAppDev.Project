@@ -38,7 +38,7 @@ public class ApplicationDAO {
     public boolean createApplication(String title, String description, int userId, int offerId) {
         connection=DBConnection.getConnection();
         try {
-            PreparedStatement stmt = connection.prepareStatement("insert into offers values (default, ?, ?, ?, ?, ?)");
+            PreparedStatement stmt = connection.prepareStatement("insert into application values (default, ?, ?, ?, ?, ?)");
             stmt.setString(1, title);
             stmt.setString(2, description);
             Date utilDate = new Date();

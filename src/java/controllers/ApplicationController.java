@@ -31,14 +31,20 @@ public class ApplicationController extends HttpServlet {
             RequestDispatcher rd;
             String error ="";
             boolean hasErrors=false;
+            System.out.println("jejeje" + request.getParameter("description"));
             
             String title = request.getParameter("title");
             String description = request.getParameter("description");
             int offerId = Integer.parseInt(request.getParameter("offerId"));
             int userId = (int) request.getSession().getAttribute("userId");
+            System.out.println(title);
+            System.out.println(description);
+            System.out.println(offerId);
+            System.out.println(userId);
+            
             
             applicationDAO.createApplication(title, description, userId, offerId);
-            rd = request.getRequestDispatcher("/index.jsp");
+            rd = request.getRequestDispatcher("viewoffers.jsp");
             rd.forward(request, response);
         
     }

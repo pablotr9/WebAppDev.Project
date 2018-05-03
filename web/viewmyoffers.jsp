@@ -1,7 +1,6 @@
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
-    Document   : viewoffers
-    Created on : 29-abr-2018, 13:08:12
+    Document   : viewmyoffers
+    Created on : 01-may-2018, 17:52:38
     Author     : Pablo
 --%>
 
@@ -27,26 +26,23 @@
 
             
             <div class="title2"> Alempa </div>
-            <div class="mypage" id="viewoffer" >
+            <div class="mypage" id="viewoffer" style="animation: 0s ease-in-out 0s 0 leftToRight;">
                 
-                <c:if test ="${requestScope.Offers==null}" var="Offers" >
-                    <%@include file="/WEB-INF/jspf/showcategories.jspf" %>
-                </c:if>
                     
-                <c:if test ="${requestScope.Offers!=null}" var="Offers" >
-                    <h1 id="selectcat" style="animation: 0s ease-in-out 0s 0 leftToRight;"> List of ${cat}s</h1><br>
+                <c:if test ="${requestScope.Offers!=null}" var="Offers"  >
+                    <h1 id="selectcat" style="animation: 0s ease-in-out 0s 0 leftToRight;"> My posted offers</h1><br>
                         
                         <c:forEach items="${requestScope.Offers}" var="Offers"
                         varStatus="err"
                         begin="0" step="1">
-                            <a href="ViewOfferController?offerId=${Offers.id}">
-                                <div class="row">
-                                    <div class="col-md-1"></div>                            
-                                    <div class="col-md-10">
-                                        <div class="oferta" style=" animation: ${err.index/3+0.9}s ease-in-out 0s 1 leftToRight;">
+                            <a  href="#prueba">
+                                <div class="row" >
+                                    <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                        <div class="oferta" style="background-color:#cfdef7; animation: ${err.index/8+0.9}s ease-in-out 0s 1 leftToRight;">
                                             <div class="row">
                                                 <div class="col-md-5"><div class="title3">${Offers.title}</div></div>
-                                                <div class="col-md-7"> Name:&nbsp ${requestScope.Users[err.index].surname} &nbsp&nbsp&nbsp Surname:&nbsp ${requestScope.Users[err.index].address} &nbsp &nbsp Address:&nbsp ${requestScope.Users[err.index].name}  </div>
+                                                <div class="col-md-7"></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-1"></div>
@@ -62,7 +58,6 @@
                                     <div class="col-md-1"></div> 
                                 </div>
                             </a>
-                        
                         </c:forEach>  
                         
                     

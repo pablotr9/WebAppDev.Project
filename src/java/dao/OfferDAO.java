@@ -85,6 +85,31 @@ public class OfferDAO {
         return user;
     }
     
+    public List<Offer> getOfferUser(int userid) {
+        connection=DBConnection.getConnection();
+        List<Offer> offers = new ArrayList<>();
+        
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("SELECT * FROM OFFERS WHERE userId = ?");
+            prepStmt.setInt(1, userid);
+            ResultSet rs = prepStmt.executeQuery();
+            
+            while (rs.next()) {
+                offers.add(new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5), rs.getString(6)));
+            }
+            
+            prepStmt.close();
+        } 
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return offers;
+    }
+    
+    
+    
+    
     public List<Offer> getOffers() {
         connection=DBConnection.getConnection();
         List<Offer> offers = new ArrayList<>();
