@@ -37,15 +37,19 @@ public class OfferDAO {
     
     public boolean createOffer(String title, String description, double price, int userId, String category) {
         connection = DBConnection.getConnection();
-        Offer offer = getOffersByUser(userId);
+        List<Offer> offers = getOfferUser(userId);
         
-        if(offer != null){
-            try {
-                PreparedStatement stmt = connection.prepareStatement("DELETE FROM offers WHERE id = ?");
-                stmt.setInt(1, offer.getId());
-                stmt.executeUpdate();
-            } catch (SQLException ex) {
-                Logger.getLogger(OfferDAO.class.getName()).log(Level.SEVERE, null, ex);
+        if(offers != null && !offers.isEmpty()){
+            for(Offer o : offers){
+                if(category.equals(o.getCategory())){
+                    try {
+                        PreparedStatement stmt = connection.prepareStatement("DELETE FROM offers WHERE id = ?");
+                        stmt.setInt(1, o.getId());
+                        stmt.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(OfferDAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
             }
         }
         
@@ -64,23 +68,6 @@ public class OfferDAO {
         }
         
         return false;
-    }
-    
-    public Offer getOffersByUser(int userId) {
-        connection = DBConnection.getConnection();
-        Offer offer = null;
-        try {
-            PreparedStatement prepStmt = connection.prepareStatement("SELECT * FROM OFFERS WHERE userId = ?");
-            prepStmt.setInt(1, userId);
-            ResultSet rs = prepStmt.executeQuery();
-            while (rs.next()) {
-                offer = new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5), rs.getString(6));
-            }
-            prepStmt.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return offer;
     }
     
     public Offer getOffer(int id) {

@@ -6,6 +6,7 @@
 package controllers;
 
 import dao.ApplicationDAO;
+import dao.UserDAO;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Application;
+import model.Comment;
+import model.User;
 
 /**
  *
@@ -24,6 +27,7 @@ import model.Application;
 
 public class GetMyApplicationsController extends HttpServlet {
     ApplicationDAO applicationDAO = ApplicationDAO.getInstance();
+    UserDAO userDAO = UserDAO.getInstance();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,7 +42,16 @@ public class GetMyApplicationsController extends HttpServlet {
         
         List<Application> applications = new ArrayList<>();
         applications = applicationDAO.getMyApplications((int) request.getSession().getAttribute("userId"));
+        
+        List<User> users = new ArrayList<>();
+        
+        for(Application a : applications){
+            User user = userDAO.getUsersByComment(a.getUserId());
+            users.add(user);
+        }
+        
         request.setAttribute("Applications", applications);
+        request.setAttribute("Users", users);
         RequestDispatcher rd;
         rd = request.getRequestDispatcher("seeapplications.jsp");
         rd.forward(request, response);
