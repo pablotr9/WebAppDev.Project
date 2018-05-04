@@ -65,7 +65,7 @@
                                         <div class="col-md-3"></div>
                                         <div class="col-md-2"><a href="Application.jsp?offerId=${Offer.id}" class="btn btn-primary btn-lg" role="button" style="font-size: 28px;">Apply</a></div>
                                         <div class="col-md-1"></div>
-                                        <div class="col-md-4"><a href="newComment.jsp?offerId=${Offer.id}" class="btn btn-success btn-lg" role="button" style="margin-top:7px;">See Comments for ${User.surname}</a></div>
+                                        <div class="col-md-4"><a href="GetCommentsController?offerId=${Offer.id}" class="btn btn-success btn-lg" role="button" style="margin-top:7px;">See Comments for ${User.surname}</a></div>
                                         <div class="col-md-2"></div>
                                     </div>
                                     <div style="height:60px;"></div>   

@@ -35,7 +35,23 @@
     <servlet>
         <servlet-name>ViewOfferController</servlet-name>
         <servlet-class>controllers.ViewOfferController</servlet-class>
+    </servlet>    
+    <servlet>
+        <servlet-name>GetCommentsController</servlet-name>
+        <servlet-class>controllers.GetCommentsController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetMyApplicationsController</servlet-name>
+        <servlet-class>controllers.GetMyApplicationsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCommentsController</servlet-name>
+        <url-pattern>/GetCommentsController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetMyApplicationsController</servlet-name>
+        <url-pattern>/GetMyApplicationsController</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OfferController</servlet-name>
         <url-pattern>/OfferController</url-pattern>
