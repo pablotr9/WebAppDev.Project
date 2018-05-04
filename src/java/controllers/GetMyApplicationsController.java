@@ -46,13 +46,11 @@ public class GetMyApplicationsController extends HttpServlet {
         List<User> users = new ArrayList<>();
         
         for(Application a : applications){
+            User user = userDAO.getUsersByComment(a.getOfferId());
             
-        System.out.println("pruebaaa " + a.getUserId());
-            User user = userDAO.getUsersByComment(a.getUserId());
             users.add(user);
         }
-        
-        System.out.println(users.get(0).getAddress());
+       
         
         request.setAttribute("Applications", applications);
         request.setAttribute("Users", users);

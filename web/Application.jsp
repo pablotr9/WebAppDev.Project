@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <p style="margin-bottom: 0px;margin-top: 15px;font-size: 34px; font-family: 'Lucida Console'"> ${param.offerId} Application </p>   
+                        <p style="margin-bottom: 0px;margin-top: 15px;font-size: 34px; font-family: 'Lucida Console'">Application </p>   
                     </div>
                     <div class="col-md-4"></div>
                 </div>
