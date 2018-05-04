@@ -33,7 +33,7 @@
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
-                            <p style="margin-bottom: 80px;margin-top: 15px;font-size: 34px; font-family: 'Lucida Console'"> My posted offers  <br> <a href="GetMyApplicationsController" class="btn btn-success btn-lg" role="button" style="margin-top:15px; position: fixed; z-index: 25;">See applications for my offers</a></p>   
+                            <p style="margin-bottom: 10px;margin-top: 15px;font-size: 34px; font-family: 'Lucida Console'"> My posted offers  <br> <a href="GetMyApplicationsController" class="btn btn-success btn-lg" role="button" style="margin-top:15px; z-index: 25;">See applications for my offers</a></p>   
                         </div>
                         <div class="col-md-4"></div>
                     </div>

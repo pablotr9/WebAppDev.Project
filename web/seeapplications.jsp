@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-md-4"></div>
                     </div>
-                        <c:forEach items="${requestScope.Applications}" var="Comments"
+                        <c:forEach items="${requestScope.Applications}" var="Applications"
                         varStatus="err"
                         begin="0" step="1">
                                 <div class="row" >
@@ -52,17 +52,17 @@
                                         <div class="col-md-10">
                                         <div class="oferta" style="border-color: #f8f8f8; background-color:#efefef; animation: ${err.index/8+0.9}s ease-in-out 0s 1 leftToRight;">
                                             <div class="row">
-                                                <div class="col-md-5"><div class="title3">${Comments.title}</div></div>
+                                                <div class="col-md-5"><div class="title3">${Applications.title}</div></div>
                                                 <div class="col-md-7"></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-1"></div>
                                                 <div class="col-md-9">
                                                     <div class="description">
-                                                        ${Comments.text}
+                                                        ${Applications.description} <br> <span style="float:right">Username: ${requestScope.Users[err.index].surname} - Email: ${requestScope.Users[err.index].name} </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2"> <div class="price"></div></div>
+                                                <div class="col-md-2"> <div class="price" style="font-size: 20px;">${Applications.date}</div></div>
                                             </div>
                                         </div>
                                     </div>
