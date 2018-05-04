@@ -7,6 +7,7 @@ package controllers;
 
 import dao.CommentDAO;
 import dao.OfferDAO;
+import dao.UserDAO;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Comment;
 import model.Offer;
+import model.User;
 
 /**
  *
@@ -24,6 +26,7 @@ import model.Offer;
  */
 public class GetCommentsController extends HttpServlet {
     CommentDAO commentDAO = CommentDAO.getInstance();
+    UserDAO userDAO = UserDAO.getInstance();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,8 +40,16 @@ public class GetCommentsController extends HttpServlet {
             throws ServletException, IOException {
         
         List<Comment> comments = new ArrayList<>();
+        List<User> users = new ArrayList<>();
         comments = commentDAO.getComments(Integer.parseInt(request.getParameter("offerId")));
+        
+        for(Comment c : comments){
+            User user = userDAO.getUsersByComment(c.getUserId());
+            users.add(user);
+        }
+        
         request.setAttribute("Comments", comments);
+        request.setAttribute("Users", users);
         RequestDispatcher rd;
         rd = request.getRequestDispatcher("seecomments.jsp");
         rd.forward(request, response);
