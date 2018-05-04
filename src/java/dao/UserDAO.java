@@ -9,6 +9,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import model.Comment;
+import model.User;
 import util.DBConnection;
 import util.Hash;
 
@@ -123,5 +127,27 @@ public class UserDAO {
         }
         
         return res;
+    }
+    
+    public User getUsersByComment(int userId){
+        connection = DBConnection.getConnection();
+        User user = null;
+        
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement("select * from users where id = ?");
+            prepStmt.setInt(1, userId);
+            ResultSet rs = prepStmt.executeQuery();
+            
+            while (rs.next()) {
+                user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6));
+            }
+            
+            prepStmt.close();
+        } 
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return user;
     }
 }
