@@ -40,7 +40,7 @@ public class GetMyApplicationsController extends HttpServlet {
         applications = applicationDAO.getMyApplications((int) request.getSession().getAttribute("userId"));
         request.setAttribute("Applications", applications);
         RequestDispatcher rd;
-        rd = request.getRequestDispatcher("/VISTADEMYAPPLICATIONS.jsp");
+        rd = request.getRequestDispatcher("seeapplications.jsp");
         rd.forward(request, response);
     }
 

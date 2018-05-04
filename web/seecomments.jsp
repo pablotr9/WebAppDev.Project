@@ -31,8 +31,13 @@
                 
                     
                 <c:if test ="${requestScope.Comments!=null}" var="Comments"  >
-                    <h1 id="selectcat" style="animation: 0s ease-in-out 0s 0 leftToRight;"> Comments <br> <a href="GetCommentsController?offerId=${Offer.id}" class="btn btn-success btn-lg" role="button" style="margin-top:15px;">Add a new comment</a></h1><br> 
-                        
+                     <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <p style="margin-bottom: 80px;margin-top: 15px;font-size: 34px; font-family: 'Lucida Console'"> Comments  <br> <a href="newComment.jsp?offerId=${param.offerId}" class="btn btn-success btn-lg" role="button" style="margin-top:15px; position: fixed; z-index: 25;">Add a new comment</a></p>   
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
                         <c:forEach items="${requestScope.Comments}" var="Comments"
                         varStatus="err"
                         begin="0" step="1">
@@ -62,7 +67,11 @@
                     
                 </c:if>
                 
-                      <div class="espacio"></div>  
+                      
+                    <div class="espacio">&nbsp;</div>
+                      <div class="espacio">&nbsp;</div>
+                      <div class="espacio">&nbsp;</div>
+                      <div class="espacio">&nbsp;</div>
             </div>
             
         </div>
