@@ -5,7 +5,7 @@
         <a id="linkoffer" href="SelectCategoryController?category=Carpenter">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
-                   <img alt = '' src ="carpintero.jpg" >
+                   <img alt = '' src ="images/carpintero.jpg" >
                </div>
 
                <div class = 'caption'>
@@ -25,7 +25,7 @@
         <a id="linkoffer" href="SelectCategoryController?category=Cleaner">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
-                  <img src = 'limpiadora.jpg' alt = ''>
+                  <img src = 'images/limpiadora.jpg' alt = ''>
                </div>
 
                <div class = 'caption'>
@@ -52,7 +52,7 @@
         <a id="linkoffer" href="SelectCategoryController?category=Plumber">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
-                  <img alt = '' src = 'fontanero.jpg' >
+                  <img alt = '' src = 'images/fontanero.jpg' >
                </div>
 
                <div class = 'caption'>
@@ -74,7 +74,7 @@
         <a id="linkoffer" href="SelectCategoryController?category=Electrician">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
-                  <img src = 'electricista.jpg' alt = ''>
+                  <img src = 'images/electricista.jpg' alt = ''>
                </div>
 
                <div class = 'caption'>
@@ -98,7 +98,7 @@
         <a id="linkoffer" href="SelectCategoryController?category=Babysitter">
             <div class = 'col-sm-3 col-md-3'>
                <div class = 'thumbnail'>
-                  <img alt = '' src = 'babysitter.jpg' >
+                  <img alt = '' src = 'images/babysitter.jpg' >
                </div>
 
                <div class = 'caption'>

@@ -165,7 +165,7 @@ html, body, .page {
 
 
 .mypage#home{
-        background-image: url("flower.jpg!d");
+        background-image: url("../images/flower.jpg!d");
         background-size: 100% 100%; 
 }
 

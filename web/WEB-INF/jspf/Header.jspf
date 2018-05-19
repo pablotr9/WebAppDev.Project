@@ -1,6 +1,28 @@
-    <div class="topnav">
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo4.png" />
+        <title>Alempa</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css'>
+        <link rel="stylesheet" href="css/styles.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        
+    <script>
+        function sendToPostOffer(e){
+            alert("jeje");
+        }
+        
+    </script>
+<div class="topnav">
         <ul id="loggedin">
-            <a href="weblogged.jsp"><li class="icon2img"><img src="logo4.png" width="160" height="180" alt="logo"></li></a>
+            <a href="weblogged.jsp"><li class="icon2img"><img src="images/logo4.png" width="160" height="180" alt="logo"></li></a>
             <a href="weblogged.jsp"><li class="icon2" id="izk">Home</li></a>
             <a href="viewoffers.jsp"><li class="icon2">View offers</li></a>
             <a href="postoffer.jsp"><li class="icon2">Post an offer</li></a>

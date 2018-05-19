@@ -10,12 +10,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" type="image/x-icon" href="logo4.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo4.png" />
         <title>Alempa</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css'>
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="css/styles.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <c:if test ="${sessionScope.USER!=null}" var="USER" >
             <c:redirect url="weblogged.jsp"/>
